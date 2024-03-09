@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    overflow-x: hidden;
+    padding: 20px;
+    filter: brightness(1px);
+    background-image: url("../imagens/desfocar-o-fundo-da-loja-de-roupas-no-shopping_293060-8462.avif");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* h1,h2{
+    color: #ffffff;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0);
+} */
+.wrap-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    width: 100%;
+}
+
+
+@media (width >= 1024px){
+    body{
+    
+        background-image: url("../imagens/desfocar-o-fundo-da-loja-de-roupas-no-shopping_293060-8462.avif");
+
+        
+    }
+    .wrap-card{
+        display: flex;
+        flex-direction: row;
+        gap: 2vw;
+    }
+}
+.botaoRedondo {
+    display: inline-block; /* Permite definir largura e altura */
+    width: 350px; /* Largura do botão */
+    height: 350px; /* Altura do botão */
+    border-radius: 50%; /* Arredonda as bordas para formar um círculo */
+    background-size: cover; /* Faz a imagem de fundo cobrir todo o botão */
+    background-position: center; /* Centraliza a imagem de fundo */
+    text-decoration: none; /* Remove o sublinhado do link */
+    opacity: 0.6;
+    transition-duration: 220ms;
+  }
+  
+  /* Estilize o foco e os estados de ativo conforme necessário */
+    /* Alterações ao passar o mouse, focar ou clicar */
+.botaoRedondo:hover{
+    opacity: 0.9;
+}  
+@media(width >= 800px){
+    .wrap-btn{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+img {
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+}
+h1{
+    color: white;
+}
+.btn-return{
+    border-radius: 20px;    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13;
+    width: 165px;
+    height: 35px;
+    background-color: #0066b8;
+    padding: 9px 50px;
+    border: none;
+    color: white;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    /* font-weight: 400; */
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    transition: all 500ms linear;
+}
+.wrap-everything{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    height: 100%;
+    width: 100%;
+}
+.wrap-img{
+    margin-bottom: 4vh;
+    opacity: 0.8;
+    animation: fromTop 2s linear;
+    
+}
+@keyframes fromTop {
+    0%{
+        transform: translateY(-200px);
+        opacity: 0.1;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+}
+.img-style{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.wrap-p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+p{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 10px, 10px, 10px, rgba(0, 0, 0, 0.3);   
+    transition: all 200ms linear;
+    animation: show 2s linear;
+}
+@keyframes show {
+    0%{
+        opacity: 0.0;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
+@media(width >= 1px){
+    body{
+        
+        overflow: hidden;
+        background-image: url("../imagens/desfocar-o-fundo-da-loja-de-roupas-no-shopping_293060-8462.avif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        transition: all 500ms linear;
+        width: auto;
+        background-attachment: fixed;
+    }
+}
+
+
+.wrap-p{
+    gap: 0;
+
+}
+p{
+    font-size: 6rem;
+    opacity: 0.7;
+    font-weight: 900;
+    filter: blur(1px);
+}
+p:hover{
+    transition: all 200ms linear;
+    cursor: pointer;
+    opacity: 1;
+    filter: blur(0);
+}

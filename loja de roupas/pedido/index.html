@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrap-all">
+    <div id="error" class="error-modal">
+        <p>Insira um nome para começar</p>
+        <button class="error-btn" onclick="fechar()">Entendi!!!</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button onclick="window.location.href='../menu/index.html'" type="button" class="btn btn-primary">Voltar</button>
+        <button onclick="window.location.href='../catalogo/index.html'" type="button" class="btn btn-primary">Catálogo</button>
+        <button onclick="window.location.href='../pedido/index.html'" type="button" class="btn btn-primary">Pedido</button>
+    </div>
+    <h1>Pedido</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu nome">
+    </div>
+    <button onclick="comecar()" type="button" class="btn btn-outline-dark">Começar</button>
+    <div id="select-div">
+    <h2>Olá <span id="nomePrint"></span>, vamos começar seu pedido!!!</h2>
+    <br>
+      <h3>Roupas de frio</h3>
+      <select class="form-select" aria-label="Default select example" id="selectFrios">
+        <option selected>Selecione sua roupa de frio</option>
+        <option value="Blusa de gomo Nike">Blusa de gomo Nike</option>
+        <option value="Luva de lã">Luva de lã</option>
+        <option value="Touca de lã">Touca de lã</option>
+        <option value="Cachecol">Cachecol</option>
+        <option value="Meia de lã">Meia de lã</option>
+      </select>
+      <h3>Camisetas</h3>
+      <select class="form-select" aria-label="Default select example" id="selectCamisetas">
+        <option selected>Selecione sua camiseta</option>
+        <option value="Camiseta coxa">Camiseta coxa</option>
+        <option value="Camiseta preta">Camiseta preta</option>
+        <option value="Camiseta branca">Camiseta branca</option>
+        <option value="Camiseta estampada bear villand">Camiseta estampada bear villand</option>
+        <option value="Camiseta de compressão Nike">Camiseta de compressão Nike</option>
+      </select>
+      <h3>Sapatos</h3>
+      <select class="form-select" aria-label="Default select example" id="selectSapatos">
+        <option selected>Selecione seu sapato</option>
+        <option value="Sapato social marrom">Sapato social marrom</option>
+        <option value="Jordan 1 mid panda low">Jordan 1 mid panda low</option>
+        <option value="Yeezy preto adidas">Yeezy preto adidas</option>
+        <option value="Adidas samba azul/branco">Adidas samba azul/branco</option>
+        <option value="New balance 9060 vermelho/branco">New balance 9060 vermelho/branco</option>
+      </select>
+      <h3>Calças</h3>
+      <select class="form-select" aria-label="Default select example" id="selectCalcas">
+        <option selected>Selecione sua calça</option>
+        <option value="Calça jeans azul">Calça jeans azul</option>
+        <option value="Calça cargo preta">Calça cargo preta</option>
+        <option value="Calça legging preta">Legging preta</option>
+        <option value="Calça jogger cinza">Calça jogger cinza</option>
+        <option value="Calça social preta">Calça social preta</option>
+      </select>
+      <h3>Artigos esportivos</h3>
+      <select class="form-select" aria-label="Default select example" id="selectEsportes">
+        <option selected>Selecione seu artigo esportivo</option>
+        <option value="Kimono branco">Kimono branco</option>
+        <option value="shorts muay thay">Shorts muay thay</option>
+        <option value="Luva de goleiro profissional">Luva de goleiro profissional</option>
+        <option value="Caneleiras">Caneleiras Nike</option>
+        <option value="Luva de boxe">Luva de boxe 12 OZ</option>
+      </select>
+      <div>
+        <button type="button" onclick="calcularTotal()" class="btn btn-success">Fazer Pedido</button>
+        <button type="button" onclick="limpar()" class="btn btn-outline-secondary">Limpar</button>
+      </div>
+      <div>
+         <span class="badge bg-primary">Total</span>
+        <span class="badge bg-danger" id="resultado"></span>
+      </div>
+      
+      <div id="pedido-pronto" class="pronto">
+        <h4>Roupa(s) de frio:</h4>
+        <p id="frio-pronto"></p>
+        <h4>Camiseta(s):</h4>
+        <p id="camiseta-pronto"></p>
+        <h4>Sapato(s):</h4>
+        <p id="sapato-pronto"></p>
+        <h4>Calça(s):</h4>
+        <p id="calca-pronto"></p>
+        <h4>Artigo(s) esportivo(s):</h4>
+        <p id="esporte-pronto"></p>
+      </div>    
+    </div>
+
+    <button class="btn-whats" onclick="enviarWhatsApp()" id="enviarWhatsApp">Enviar Total via WhatsApp</button>
+</body>
+</html>
